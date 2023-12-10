@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="topBar.css" />
+    <link rel="stylesheet" href="home.css" />
+    <html lang="en">
+
+    </html>
+    <title>Home Page</title>
+</head>
+
+<body>
+    <nav aria-label="Navigation Bar" id="navbar" class="navbar">
+        <img src="images/menu.png" alt="Menu Button" class="menubuttone" id="btn" role="button">
+
+        <div class="linkholder" id="links" aria-expanded="false">
+            <a href="index.html" aria-labelledby="navbar Home Page" class="navlink">Home</a>
+            <a href="states.html" aria-labelledby="navbar Aria States" class="navlink">Aria States</a>
+            <a href="#" aria-labelledby="navbar Aria Properties" class="navlink">Aria Properties</a>
+        </div>
+
+    </nav>
+
+    <h3>Example of using mixed languages and the lang attribute</h3>
+
+    <p>One of the most famous scientist in quantum mechanics is <span lang="de" class="">Werner Heisenberg</span> he was
+        a German Scientist.</p>
+
+    <div class="popup" onmouseover="popup()" onmouseout="popup()" aria-haspopup="true" aria-label="Hover Tooltip">Popup example
+        <span class="popuptext" id="popup">Tooltip</span>
+    </div>
+
+    <script>
+        let isMouseOver = false;
+
+        dropdown = document.getElementById('links');
+        btn = document.getElementById('btn');
+
+        document.getElementById('btn').addEventListener('mouseenter', function(event) {
+            if (event.target === btn) {
+                isMouseOver = true;
+                dropdown.style.display = "block";
+                dropdown.setAttribute("aria-expanded", "true");
+            }
+        });
+
+        document.getElementById('links').addEventListener('mouseleave', remove);
+        document.getElementById('btn').addEventListener('mouseout', remove);
+
+        function remove(event) {
+            if (event.target === dropdown) {
+                isMouseOver = false;
+                dropdown.style.display = "none";
+                dropdown.setAttribute("aria-expanded", "false");
+
+            }
+        }
+
+        function popup() {
+            var popup = document.getElementById("popup");
+            popup.classList.toggle("show");
+        }
+    </script>
+</body>
+
+</html>
