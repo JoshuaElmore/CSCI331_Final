@@ -4,11 +4,11 @@
     font-family: sans-serif;
 }
 body{
-    background-color: aliceblue;
+    background-color: #f0f8ff;
 }
 .navlink{
     background-color: #4981b9;
-    color: white;
+    color: #ffffff;
     margin: 0;
     margin-right: 10px;
     border: rgb(0, 0, 0);
@@ -16,14 +16,13 @@ body{
     border-style: solid;
     padding: 10px;
     text-decoration: none;
-    
 }
 .navlink:hover{
     background-color: #3c6ea5;
     box-shadow: 5px 5px #3c6fa57d;
 }
 .navbar{
-    background-color: #e4e7ad;
+    background-color: #4c6fc7;
     height: 90px;
     width: 100%;
 }

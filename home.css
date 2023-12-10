@@ -3,6 +3,11 @@ h1 {
     margin-left: 10px;
     margin-top: 10px;
 }
+h2 {
+    font-size: 35px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
 
 h3 {
     font-size: 30px;
@@ -20,7 +25,11 @@ span {
     font-weight: bold;
 }
 
-/* Popup container */
+.downloadlink {
+    color: #c36b0e;
+    text-decoration: none;
+}
+
 .popup {
     position: relative;
     display: inline-block;
@@ -28,12 +37,11 @@ span {
     margin: 20px;
 }
 
-/* The actual popup (appears on top) */
 .popup .popuptext {
     visibility: hidden;
     width: 80px;
-    background-color: #555;
-    color: #fff;
+    background-color: #555555;
+    color: #ffffff;
     text-align: center;
     border-radius: 6px;
     padding: 8px 0;
@@ -44,7 +52,6 @@ span {
     margin-left: -40px;
 }
 
-/* Popup arrow */
 .popup .popuptext::after {
     content: "";
     position: absolute;
@@ -56,22 +63,9 @@ span {
     border-color: #555 transparent transparent transparent;
 }
 
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
 .popup .show {
     visibility: visible;
-    -webkit-animation: fadeIn 250ms;
     animation: fadeIn 250ms
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
 }
 
 @keyframes fadeIn {

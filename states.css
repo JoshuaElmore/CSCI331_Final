@@ -1,0 +1,47 @@
+.hidden {
+    display: none;
+}
+
+h1 {
+    font-size: 40px;
+    margin: 10px;
+}
+h2 {
+    font-size: 35px;
+    margin: 10px;
+    margin-top: 100px;
+}
+.toph2{
+    margin-top: 10px;
+}
+
+h3 {
+    font-size: 30px;
+    margin: 10px;
+}
+
+p {
+    font-size: 20px;
+    margin: 10px;
+}
+span {
+    color: #4981b9;
+    font-size: 30px;
+}
+
+#toggleButton {
+    background-color: #4981b9;
+    color: #ffffff;
+    margin: 0;
+    margin-right: 10px;
+    border: rgb(0, 0, 0);
+    border-radius: 5px;
+    border-style: solid;
+    padding: 10px;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+#chk1 {
+    margin: 20px;
+}

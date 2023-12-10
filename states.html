@@ -22,16 +22,56 @@
         </div>
     </nav>
 
+    <h2 class="toph2">ARIA States Example</h2>
+
+    <button id="toggleButton"  aria-expanded="false" onclick="toggleContent()">Toggle Content using
+        aria-expanded</button>
+
+    <div id="extraContent" class="hidden" role="region" aria-labelledby="toggleButton">
+        <h3>This is some extra content.</h3>
+    </div>
+
+
+    <h2>ARIA Checkbox Example</h2>
+
+    <div role="checkbox" aria-checked="false" tabindex="0" id="chk1" onclick="toggleCheckbox()">
+        <span>&#9744;</span> Click me
+    </div>
+
 
     <script>
-        let isMouseOver = false;
 
         dropdown = document.getElementById('links');
         btn = document.getElementById('btn');
 
+        function toggleCheckbox() {
+            var checkbox = document.getElementById('chk1');
+            var isChecked = checkbox.getAttribute('aria-checked') === 'true';
+
+            if (isChecked) {
+                checkbox.setAttribute('aria-checked', 'false');
+                checkbox.innerHTML = '<span>&#9744;</span> Click me';
+            } else {
+                checkbox.setAttribute('aria-checked', 'true');
+                checkbox.innerHTML = '<span>&#9745;</span> Click me';
+            }
+        }
+
+        function toggleContent() {
+        var button = document.getElementById('toggleButton');
+        var content = document.getElementById('extraContent');
+
+        if (content.classList.contains('hidden')) {
+            content.classList.remove('hidden');
+            button.setAttribute('aria-expanded', 'true');
+        } else {
+            content.classList.add('hidden');
+            button.setAttribute('aria-expanded', 'false');
+        }
+    }
+
         document.getElementById('btn').addEventListener('mouseenter', function (event) {
             if (event.target === btn) {
-                isMouseOver = true;
                 dropdown.style.display = "block";
                 dropdown.setAttribute("aria-expanded", "true");
             }
@@ -42,7 +82,6 @@
 
         function remove(event) {
             if (event.target === dropdown) {
-                isMouseOver = false;
                 dropdown.style.display = "none";
                 dropdown.setAttribute("aria-expanded", "false");
 
@@ -51,4 +90,5 @@
     </script>
 
 </body>
+
 </html>

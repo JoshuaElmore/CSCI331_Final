@@ -28,9 +28,14 @@
     <p>One of the most famous scientist in quantum mechanics is <span lang="de" class="">Werner Heisenberg</span> he was
         a German Scientist.</p>
 
-    <div class="popup" onmouseover="popup()" onmouseout="popup()" aria-haspopup="true" aria-label="Hover Tooltip">Popup example
+    <div role="button" class="popup" onmouseover="popup()" onmouseout="popup()" onfocus="popup()" onblur="popup()" aria-haspopup="true"
+        aria-label="Hover Tooltip">Popup example
         <span class="popuptext" id="popup">Tooltip</span>
     </div>
+
+    <a href="Presentation.pptx" class="downloadlink" download>
+        <h3 >Download Presentation</h3>
+    </a>
 
     <script>
         let isMouseOver = false;
@@ -38,7 +43,7 @@
         dropdown = document.getElementById('links');
         btn = document.getElementById('btn');
 
-        document.getElementById('btn').addEventListener('mouseenter', function(event) {
+        document.getElementById('btn').addEventListener('mouseenter', function (event) {
             if (event.target === btn) {
                 isMouseOver = true;
                 dropdown.style.display = "block";
