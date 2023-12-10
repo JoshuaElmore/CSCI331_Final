@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="topBar.css" />
-    <link rel="stylesheet" href="states.css" />
+    <link rel="stylesheet" href="properties.css" />
     <html lang="en">
 
     </html>
@@ -21,9 +21,36 @@
             <a href="properties.html" aria-labelledby="navbar Aria Properties" class="navlink">Aria Properties</a>
         </div>
     </nav>
+    <h2 class="toph2">Example of using aria-hidden</h2>
 
+    <div aria-hidden="true">
+        <p>This content is hidden from screen readers. This can be uses for images or content that is only for decoration and not part of the functionality of the page</p>
+    </div>
+
+    <h2>Example of using aria-live</h2>
+    <p> Because this is marked with aria-live="polite" it will tell the user that this element has  changed no mater where they are on the page</p>
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" aria-required="true">
+        <input type="button" value="Show Username" onclick="enterUsername()" id="show">
+    </form>
+
+    <div aria-live="polite" id="status">
+        <p id="usernameout">Status updates will appear here.</p>
+    </div>
 
     <script>
+        function enterUsername() {
+            let username = document.getElementById('username').value;
+
+            if (username === '') {
+                document.getElementById('usernameout').innerText = 'Please enter a username.';
+                return;
+            } else {
+                document.getElementById('usernameout').innerText = 'Username ' + username + ' entered.';
+            }
+        }
+
         let isMouseOver = false;
 
         dropdown = document.getElementById('links');
@@ -51,4 +78,5 @@
     </script>
 
 </body>
+
 </html>
